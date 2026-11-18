@@ -1,0 +1,107 @@
+VERIFY: autoloads_present | PASS | SaveManager/SettingsManager/SoundManager loaded
+VERIFY: menu_opens | PASS | main menu in tree
+VERIFY: menu_section_character | PASS | title=CHARACTER
+VERIFY: menu_section_weapons | PASS | title=WEAPONS
+VERIFY: menu_section_missions | PASS | title=MISSIONS
+VERIFY: menu_section_settings | PASS | title=SETTINGS
+VERIFY: menu_section_shop | PASS | title=COSMETIC SHOP — SPEC ONLY
+VERIFY: menu_select_character | PASS | character=luna, weapon=sniper
+VERIFY: menu_back_home | PASS | back navigation works
+VERIFY: game_opens | PASS | world+player+hud+mission alive
+VERIFY: scene_entry | PASS | player at landing spawn (-70.0, 0.000228, -50.0)
+VERIFY: player_feet_on_ground | PASS | player y=0.00 (feet-at-origin fix)
+VERIFY: hud_button_FIRE | PASS | button 'FIRE' exists
+VERIFY: hud_button_AIM | PASS | button 'AIM' exists
+VERIFY: hud_button_JUMP | PASS | button 'JUMP' exists
+VERIFY: hud_button_USE | PASS | button 'USE' exists
+VERIFY: hud_button_RELOAD | PASS | button 'RELOAD' exists
+VERIFY: hud_button_WEAPON | PASS | button 'WEAPON' exists
+VERIFY: hud_button_CROUCH | PASS | button 'CROUCH' exists
+VERIFY: hud_button_BAG (Inventory) | PASS | button 'BAG (Inventory)' exists
+VERIFY: hud_button_Full Map | PASS | button 'Full Map' exists
+VERIFY: hud_button_II | PASS | button 'II' exists
+VERIFY: hud_button_RIDE | PASS | button 'RIDE' exists
+VERIFY: hud_button_EXIT | PASS | button 'EXIT' exists
+VERIFY: hud_button_ACCEL | PASS | button 'ACCEL' exists
+VERIFY: hud_button_BRAKE | PASS | button 'BRAKE' exists
+VERIFY: hud_button_Resume | PASS | button 'Resume' exists
+VERIFY: hud_button_Settings | PASS | button 'Settings' exists
+VERIFY: hud_button_Quit to Menu | PASS | button 'Quit to Menu' exists
+VERIFY: hud_button_Back | PASS | button 'Back' exists
+VERIFY: hud_button_Take All | PASS | button 'Take All' exists
+VERIFY: hud_button_Close | PASS | button 'Close' exists
+VERIFY: hud_button_Retry Mission | PASS | button 'Retry Mission' exists
+VERIFY: hud_button_Main Menu | PASS | button 'Main Menu' exists
+VERIFY: hud_button_Continue | PASS | button 'Continue' exists
+VERIFY: pause_on | PASS | tree paused
+VERIFY: pause_off | PASS | tree resumed
+VERIFY: move_walk_run | PASS | moved 3.3 m in 0.6 s (speed ~5.4 m/s, run=8)
+VERIFY: move_sprint | PASS | sprint velocity 11.0 m/s (target 11)
+VERIFY: move_jump | PASS | vertical velocity rose after jump press
+VERIFY: move_crouch | PASS | crouched, capsule height 1.2
+VERIFY: move_uncrouch | PASS | stood up, capsule height 1.8
+VERIFY: camera_yaw_pi | PASS | yaw=3.142 (~PI), forward reversed (0.000007, 0.0, 1.0)
+VERIFY: camera_yaw_360 | PASS | yaw=6.283 (~2PI), forward back (-0.000015, 0.0, -1.0)
+VERIFY: camera_pitch_max | PASS | pitch clamped +45 deg
+VERIFY: camera_pitch_min | PASS | pitch clamped -60 deg
+VERIFY: fire | PASS | mag 5 -> 4
+VERIFY: enemy_hit | PASS | enemy hp 15.0 -> 0.0
+VERIFY: ads_aiming | PASS | aiming=true while aim held
+VERIFY: ads_scope_sniper | PASS | sniper scope=scope_8x
+VERIFY: ads_fov_zoom | PASS | FOV 33.9 (zoom 0.45 -> 33.8)
+VERIFY: ads_fire_while_aiming | PASS | fired while aiming, mag 5 -> 4
+VERIFY: ads_release | PASS | aiming=false after release
+VERIFY: weapon_rifle_fire | PASS | rifle mag 30 -> 29
+VERIFY: weapon_shotgun_reload | PASS | shotgun reloaded to 6 after 3.2 s
+VERIFY: weapon_switch | PASS | loadout=["sniper", "shotgun"] current=shotgun
+VERIFY: mission_land | PASS | stage 1 -> 1
+VERIFY: mission_outpost_zone | PASS | stage 3 after entering outpost
+VERIFY: mission_building | PASS | stage 3 after entering building
+VERIFY: mission_core | PASS | stage 4 after taking core
+VERIFY: mission_terminal | PASS | stage 5 after activating terminal
+VERIFY: mission_defeat | PASS | stage 6 after 3 defeats
+VERIFY: mission_complete | PASS | mission completed=true stage=7
+VERIFY: save_load | PASS | round-trip stage=5 kills=42
+VERIFY: save_corrupt_fallback | PASS | corrupt save falls back to defaults
+VERIFY: pickup_medkit | PASS | Picked up: Medkit x1
+VERIFY: pickup_shield_cell | PASS | Picked up: Shield Cell x1
+VERIFY: pickup_ammo_rifle | PASS | Picked up: Rifle Ammo (+30) x30
+VERIFY: pickup_ammo_pistol | PASS | Picked up: Pistol Ammo (+12) x12
+VERIFY: pickup_core_fragment | PASS | Picked up: Core Fragment x1
+VERIFY: pickup_cap | PASS | full medkit inventory refuses pickup
+VERIFY: door_exists | PASS | 13 doors in world (13 buildings)
+VERIFY: door_auto_open | PASS | door opened on approach (dist ~2.5 m)
+VERIFY: door_auto_close | PASS | door closed after player left
+VERIFY: vehicle_exists | PASS | Rover RX-7 spawned
+VERIFY: vehicle_ride_button | PASS | RIDE button visible within 4.5 m
+VERIFY: vehicle_enter | PASS | player driving=true
+VERIFY: vehicle_driving_ui | PASS | driving UI on, combat UI hidden
+VERIFY: vehicle_drive | PASS | speed 18.0 m/s, moved 13.7 m
+VERIFY: vehicle_exit_refused_fast | PASS | exit refused at 18.0 m/s
+VERIFY: vehicle_exit | PASS | exited after slowing, driving=false
+VERIFY: vehicle_ui_restored | PASS | combat UI back after exit
+VERIFY: loot_drop | PASS | 1 loot box(es) after kill
+VERIFY: loot_cap_overflow | PASS | full inventory: took 0, medkit stays in box
+VERIFY: loot_take_ammo | PASS | took 30 rifle ammo
+VERIFY: minimap_updates | PASS | map pos (131.2083, 167.1042) -> (142.375, 167.1042)
+VERIFY: minimap_visible | PASS | minimap size (268.0, 260.0)
+VERIFY: full_map_opens | PASS | full map panel opens
+VERIFY: villages_houses | PASS | 12 houses (12 expected)
+VERIFY: villages_streets | PASS | 3 streets
+VERIFY: scale_door_fits_player | PASS | door 1.2x2.1 m vs player 1.8 m
+VERIFY: scale_street_fits_vehicle | PASS | street 7.0 m vs vehicle 1.9 m wide
+VERIFY: scale_vehicle | PASS | rover 4.5 x 1.9 m
+VERIFY: character_nova | PASS | spawned nova (Nova), PBR suit=true
+VERIFY: character_atlas | PASS | spawned atlas (Atlas), PBR suit=true
+VERIFY: enemy_runner_stats | PASS | runner hp=60 speed=7.0
+VERIFY: enemy_armored_stats | PASS | armored hp=220
+VERIFY: enemy_armored_reduction | PASS | 100 dmg -> 75 after 25% reduction, hp=145.0
+VERIFY: enemy_patrol_move | PASS | runner patrolled 2.25 m
+VERIFY: multitouch_joystick_fire | PASS | joystick (-0.566529, -0.824042) + fire held, mag decreased
+VERIFY: resize_667x375 | PASS | minimap 209 px, joystick 173 px
+VERIFY: resize_852x393 | PASS | minimap 209 px, joystick 173 px
+VERIFY: resize_932x430 | PASS | minimap 209 px, joystick 173 px
+VERIFY: resize_1366x1024 | PASS | minimap 268 px, joystick 220 px
+VERIFY: no_empty_files | PASS | empty files: []
+VERIFY: perf_stats | INFO | 139 FPS | 0 draws | 0 tris | 0 MB
+VERIFY SUMMARY: 105 passed, 0 failed
