@@ -5,10 +5,8 @@
 # Godot 4.4.1 + export templates, Xcode project export, xcodebuild.
 name: Build iOS IPA (Godot)
 
-
 on:
   workflow_dispatch:
-
 
 jobs:
   build-ios:
@@ -16,7 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
 
       - name: Download Godot 4.4.1
         run: |
@@ -26,7 +23,6 @@ jobs:
           mv Godot.app ~/godot/
           echo "$HOME/godot/Godot.app/Contents/MacOS" >> "$GITHUB_PATH"
 
-
       - name: Download export templates
         run: |
           curl -L -o templates.tpz https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
@@ -34,17 +30,14 @@ jobs:
           unzip -q templates.tpz -d /tmp/godot-templates
           cp -r /tmp/godot-templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.4.1.stable/
 
-
       - name: Import project
         run: |
           Godot --headless --import --path .
-
 
       - name: Export iOS Xcode project
         run: |
           mkdir -p GalaxyFrontier-iOS
           Godot --headless --export-release "iOS" GalaxyFrontier-iOS/GalaxyFrontier.xcodeproj
-
 
       - name: Build unsigned IPA
         working-directory: GalaxyFrontier-iOS
@@ -53,7 +46,6 @@ jobs:
           mkdir -p Payload
           cp -r build/Release-iphoneos/GalaxyFrontier.app Payload/
           zip -r GalaxyFrontier.ipa Payload
-
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
